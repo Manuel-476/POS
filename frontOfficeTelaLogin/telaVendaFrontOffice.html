@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/telaOps.css">
+    <style>
+        body{margin:auto;
+           background-color: rgb(254, 255, 255);}
+      #tela_venda
+      {
+        display:flex;
+        justify-content:space-between;
+      }
+      #Menu_categorias
+      {
+        width:65%;
+        margin-top:20px;
+      }
+      #grupoCategorias
+      {
+        display:flex;
+        justify-content:space-evenly;
+        flex-wrap:nowrap;
+        width:90%;
+        list-style-type: none;
+        margin:auto;
+        text-align: center;
+      }
+      .categoria
+      {
+        padding:25px;
+        border:1px solid black;
+        border-radius:10px;
+      }
+      #visualizacao
+      {
+        width:35%;
+        border:1px solid black;
+        margin-top:20px;
+        height:500px;
+      }
+      .lista_cabecalho,#cabecalho_outros,#visualizacao_rodape
+      {
+        display:flex;
+        justify-content:space-between;
+        list-style-type: none;
+        align-items: center;
+      }
+      #lista_artigo
+      {
+        height:300px;
+        border:1px solid black;
+        background-color: rgb(201, 201, 201);
+        width:95%;
+        margin:auto;
+        text-align:center;
+        margin-top:10px;
+      }
+      #lista_opcao
+       {
+        display:flex;
+        justify-content:start;
+        list-style-type: none;
+        margin:auto;
+        width:90%;
+      
+       }
+       #lista_opcao li{
+        padding:25px;
+        border-radius:10px;
+      }
+       #cabecalho_principal
+       {
+        background-color:rgb(74, 72, 80);
+        color:white;
+       }
+       #tabela_descricao
+       {
+        width:100%;
+        margin:auto;
+        text-align: center;
+        border-spacing: 0px;
+      }
+      #lista_opcao .opcao:hover, .categoria:hover
+      {   
+        background-color: rgb(222, 217, 217);
+        cursor:pointer;
+        transition: 0.5s;
+      }
+      #cabecalho_principal h1, #cabecalho_outros a, small,#lista_opcao small
+      {
+        text-align:center;
+        margin:auto;
+     } 
+     #lista_opcao .opcao:active, .categoria:active{background-color: rgb(155, 154, 154);}
+     #tabela_descricao thead
+     { 
+        background-color:rgb(74, 72, 80);
+        color:white;
+      }
+      #tabela_descricao th, tr{padding:10px;}
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header id="cabecalho_principal">
+        <nav class="lista_cabecalho">
+            <div>
+               <h3>POS</h3>
+           </div>
+           <div style="width:12.5%;"id="cabecalho_outros">
+              <a  href="#">
+                 <img style="text-align:center;color:white;margin:auto;" src="img/setting_32x32.png" alt=""><br>
+                   <small  style="color:white">
+                      Definicoes
+                   </small>
+              </a>
+              <a  href="#">
+                <img src="img/coin_32x32.png" alt=""><br>
+                   <small style="color:white">
+                      Moedas
+                  </small>
+              </a>
+           </div>
+        </nav>
+    </header>
+  <section id="tela_venda">
+     <section id="Menu_categorias">
+        <ul id="grupoCategorias">
+           <li class="categoria" id="Bedida"><img src="img/bebida_32x32.png" alt=""><br>Bedidas</li>
+           <li class="categoria" id="Comida"><img src="img/32x32.png" alt=""><br>Comidas</li>
+        </ul>
+        <div id="lista_artigo">
+
+        </div>
+        <ul id="lista_opcao">
+          <li class="opcao">
+            <img src="img/arrow.png" style="width:32px;" alt=""><br>
+            &nbsp; <small  style="color:black;">
+                 Voltar
+             </small>
+        </li>
+          <li class="opcao">
+            <img src="img/user_32x32.png" alt=""><br>
+               <small  style="color:black;">
+                   + Mesa
+              </small>
+          </li>
+          <li class="opcao">
+            <img src="img/edit_32x32.png" alt=""><br>
+              <small  style="color:black;">
+                  Editar
+              </small>
+          </li>
+          <li class="opcao">
+              <img src="img/plus_32x32.png" alt="">
+              <img src="img/minus_32x32.png" alt=""><br>
+              &nbsp; <small  style="color:black;">
+                   Unknown
+               </small>
+          </li>
+        </ul>
+     </section>
+     <aside id="visualizacao">
+         <table id="tabela_descricao">
+            <thead>
+              <tr>
+                 <th>Qtd</th>
+                 <th>Descricao</th>
+                 <th>Total</th>
+                </thead>
+              </tr>
+              <tr>
+                 <td>11</td>
+                 <td>GrapeJuice Blues</td>
+                 <td>19.25</td>
+              </tr>
+         </table>
+         <input type="text" style="background-color:rgb(215, 215, 215);width:100%;margin-top:100%;">
+         <div id="visualizacao_rodape">
+            <div><a href="" class="opcao"><img src="img/trash_32x32.png" alt=""></a></div>
+            <div><a href="" class="opcao"><img src="img/print_32x32.png" alt=""></a></div>
+            <div><a href="" class="opcao"><img src="img/moeda_32x32.png" alt=""></a></div>
+            <div><a href="" class="opcao"><img src="img/check_32x32.png" alt=""></a></div>
+         </div>
+     </aside>
+  </section>
+</body>
+</html>

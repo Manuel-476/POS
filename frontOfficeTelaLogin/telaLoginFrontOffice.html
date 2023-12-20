@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="css\loginCss" type="text/css" rel="stylesheet">
+    <title>Login</title>
+    <style>
+         body{
+              background-image: url("img/fundo2.jpg");
+              background-size: 100%;
+              background-position: 0px -1px;
+            }
+         #painel
+         {
+            width:25%;
+            background-color: rgb(21, 20, 20);
+            margin:auto;
+            margin-top:20px;
+            padding:10px;
+            padding-top: 40px;
+            height:40%;
+            border-radius:15px;
+            border:1px solid black;
+         }
+         .painel_display
+         {
+            display:flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            width:90%;
+            padding:10px;
+            border:solid 1px azure;
+            margin:auto;
+            background-color: #3a3a3b;
+            border-radius:15px 15px 0px 0px;
+         }
+         .display_formularios
+         {
+             width:100%;
+             padding:10px;
+             margin:auto;
+             /*opacity:0.5;*/
+             background-color: #d0d3d3;
+         }
+         #senha{width:94.2%;}
+
+         .painel_button
+         {
+            display:flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            padding:10px;
+            width:90%;
+            border:solid 1px #fff;
+            margin:auto;
+            background-color: #3a3a3b;
+            height: 40%;
+            border-radius:0px 0px 15px 15px;
+         }
+         .linha_button
+         {
+            display:flex;
+            justify-content: space-between;
+            padding:10px;
+            width:100%;
+         }
+         .button
+         {
+            width:33.3%;
+            padding: 7%;
+            color:black;
+            height:90%;
+           /* border:solid 1px #fff;*/
+            text-align: center;
+            font-size:18px;
+           /* background-color: blue;*/
+            background-image: url("img/botao_cinza3_4.png");
+            background-size: 100%;
+            background-position: 0px -1px;
+            cursor:pointer;
+
+        }
+        #botao_salvar {
+            width:100%;
+            height:65px;
+            /*background-color:rgb(50, 205, 50);*/
+            background-image: url("img/fundo_botao_accept_mouseleave.jpg");
+            background-size: 100.5%;
+            background-position: 0px -3px;
+        }
+        
+        .button:hover {background-color: #c4a312;}
+        .button:active {background-color: #f2e091;}
+
+        .display_formularios:hover{background-color: #faffff;}
+
+        #botao_C{}
+       
+        #botao_C:hover{background-color: rgb(125, 59, 57);}
+        #botao_C:active{background-color: rgb(232, 130, 128);}
+
+        #botao_salvar:hover {
+                background-image: url("img/fundo_botao_accept_mouseover.jpg");
+                background-size: 100.5%;
+                background-position: 0px -3px;    
+            }
+        #botao_salvar:active {
+               background-image: url("img/fundo_botao_accept_mouseleave.jpg");
+               background-size: 100.5%;
+               background-position: 0px -3px;
+            }
+    </style>
+</head>
+<body>
+ <form method="" action="">
+    <div class="painel_login" id="painel">
+        <h4 class="" style="color:#fff;margin-top:-25px;margin-bottom:0px;">POS</h4>
+        <div class="painel_display" id="painel_display">
+            <select name="" id="" class="display_formularios" id="local">
+               <option value=""></option>
+            </select><br>
+            <select name="" id="" class="display_formularios" id="tipo">
+              <option value=""></option>
+            </select><br>
+            <input type="text" name="senha"  class="display_formularios" id="senha"><br>
+        </div>
+        <div class="painel_button">
+            <div class="linha_button" id="button_terceira_linha">
+                <div onclick="inserirDigitosNoInputSenha(7)" class="button" id="botao_Sete">7</div>
+                <div onclick="inserirDigitosNoInputSenha(8)" class="button" id="botao_Oito">8</div>
+                <div onclick="inserirDigitosNoInputSenha(9)" class="button" id="botao_Nove">9</div>
+            </div>
+            <div class="linha_button" id="button_segunda_linha">
+               <div onclick="inserirDigitosNoInputSenha(4)" class="button"id="botao_Um">4</div>
+               <div onclick="inserirDigitosNoInputSenha(5)" class="button"id="botao_Dois">5</div>
+               <div onclick="inserirDigitosNoInputSenha(6)" class="button"id="botao_Tres">6</div>
+            </div>
+            <div class="linha_button" id="button_primeira_linha">
+              <div onclick="inserirDigitosNoInputSenha(1)" class="button"id="botao_Um">1</div>
+              <div onclick="inserirDigitosNoInputSenha(2)" class="button"id="botao_Dois">2</div>
+              <div onclick="inserirDigitosNoInputSenha(3)" class="button"id="botao_Tres">3</div>
+            </div>
+            <div class="linha_button" id="button_linha_opcoes">
+              <div onclick="inserirDigitosNoInputSenha('.')" class="button" id="botao_ponto">.</div>
+              <div onmousedown="reduzirDigitosNoInputSenha()"   class="button" id="botao_C">C</div>
+              <div onclick="inserirDigitosNoInputSenha(0)"   class="button" id="botao_Zero">0</div>
+            </div>
+            <div class="linha_button" id="button_linha_salvar">
+                <button class="button" id="botao_salvar">
+                    Entrar
+                </button>
+            </div>
+        </div>
+    </div>
+ </form>
+</body>
+
+<script> 
+
+    function inserirDigitosNoInputSenha(digito)
+    {
+        var senha=document.getElementById('senha');
+        senha.value+=digito;
+       // senha.textContent=digito;
+    }
+
+    function reduzirDigitosNoInputSenha()
+    {     
+        var senha=document.getElementById('senha');
+        var novo;
+        var alteraSenha=senha.value;
+        novo=alteraSenha.substring(0, alteraSenha.length - 1);
+        senha.value=novo;
+       // senha.textContent=digito;
+    }
+</script>
+</html>
