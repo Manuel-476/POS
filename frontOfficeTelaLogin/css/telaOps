@@ -1,89 +1,104 @@
-  body{margin:auto;
-           background-color: rgb(254, 255, 255);}
-      #tela_venda
-      {
-        display:flex;
-        justify-content:space-between;
-      }
-      #Menu_categorias
-      {
-        width:65%;
-        margin-top:20px;
-      }
-      #grupoCategorias
-      {
-        display:flex;
-        justify-content:space-between;
-        flex-wrap:nowrap;
-        width:90%;
-        list-style-type: none;
-        margin:auto;
-        text-align: center;
-      }
-      .categoria
-      {
-        padding:25px;
-        border:1px solid black;
-        border-radius:10px;
-      }
-      #visualizacao
-      {
-        width:35%;
-        border:1px solid black;
-        margin-top:20px;
-        height:500px;
-      }
-      .lista_cabecalho,#cabecalho_outros
-      {
-        display:flex;
-        justify-content:space-between;
-        list-style-type: none;
-        align-items: center;
-      }
-      #lista_artigo
-      {
-        height:300px;
-        border:1px solid black;
-        background-color: rgb(201, 201, 201);
-        width:95%;
-        margin:auto;
-        text-align:center;
-        margin-top:10px;
-      }
-      #lista_opcao
-       {
-        display:flex;
-        justify-content:start;
-        list-style-type: none;
-        margin:auto;
-        width:90%;
-      
-       }
-       #lista_opcao li{
-        padding:25px;
-        border-radius:10px;
-      }
-       #cabecalho_principal
-       {
-        background-color:rgb(74, 72, 80);
-        color:white;
-       }
-       #tabela_produto
-       {
-        width:90%;
-        margin:auto;
-        text-align: center;
-      }
-      #lista_opcao .opcao:hover, .categoria:hover
-      {   
-        background-color: rgb(222, 217, 217);
-        cursor:pointer;
-        transition: 0.5s;
-      }
-      #cabecalho_principal h1, #cabecalho_outros a, small,#lista_opcao small
-      {
-        text-align:center;
-        margin:auto;
-     } 
-     #lista_opcao .opcao:active, .categoria:active{background-color: rgb(155, 154, 154);}
-   
+body
+{
+  margin:auto;
+  background-color: rgb(254, 255, 255);
+}
+#tela_venda
+{
+  display:flex;
+  justify-content:space-between;
+}
+#Menu_categorias
+{
+  width:65%;
+  margin-top:20px;
+}
+#grupoCategorias
+{
+  display:flex;
+  justify-content:space-evenly;
+  flex-wrap:nowrap;
+  width:90%;
+  list-style-type: none;
+  margin:auto;
+  text-align: center;
+}
+.categoria
+{
+  padding:25px;
+  border:1px solid black;
+  border-radius:10px;
+}
+#visualizacao
+{
+  width:35%;
+  border:1px solid black;
+  margin-top:20px;
+  height:500px;
+}
+.lista_cabecalho,#cabecalho_outros,#visualizacao_rodape
+{
+  display:flex;
+  justify-content:space-between;
+  list-style-type: none;
+  align-items: center;
+}
+#lista_artigo
+{
+  height:300px;
+  border:1px solid black;
+  background-color: rgb(201, 201, 201);
+  width:95%;
+  margin:auto;
+  text-align:center;
+  margin-top:10px;
+}
+#lista_opcao
+ {
+  display:flex;
+  justify-content:start;
+  list-style-type: none;
+  margin:auto;
+  width:90%;
+ }
+ #lista_opcao li{
+  padding:25px;
+  border-radius:10px;
+}
+ #cabecalho_principal
+ {
+  background-color:rgb(74, 72, 80);
+  color:white;
+ }
+ #tabela_descricao,#tabela_produto
+ {
+  width:100%;
+  margin:auto;
+  text-align: center;
+  border-spacing: 0px;
+  background-color: #fff;
+}
+#lista_opcao .opcao:hover, .categoria:hover
+{   
+  background-color: rgb(222, 217, 217);
+  cursor:pointer;
+  transition: 0.5s;
+}
+#cabecalho_principal h1, #cabecalho_outros a, small,#lista_opcao small
+{
+  text-align:center;
+  margin:auto;
+} 
+#lista_opcao .opcao:active, .categoria:active{background-color: rgb(155, 154, 154);}
+#tabela_descricao thead, #tabela_produto thead
+{ 
+  background-color:rgb(74, 72, 80);
+  color:white;
+}
+#tabela_descricao th, #tabela_produto th, tr{padding:10px;}
+tbody tr:hover
+{ 
+  background-color: rgb(222, 217, 217);
+  cursor:pointer;
+  transition: 0.5s;
+}
