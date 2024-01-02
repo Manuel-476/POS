@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Venda</title>
     <style>
-       body
+input
+{
+  width:100%;
+  padding:5px;
+  background-color: #c5c4c4;
+}
+body
 {
   margin:auto;
   background-color: rgb(254, 255, 255);
@@ -43,12 +49,29 @@
   margin-top:20px;
   height:500px;
 }
-.lista_cabecalho,#cabecalho_outros,#visualizacao_rodape
+.lista_cabecalho,#cabecalho_outros
 {
   display:flex;
   justify-content:space-between;
   list-style-type: none;
-  align-items: center;
+  border: 1px solid black;
+}
+#visualizacao_rodape
+{
+  width:100%;
+  display:flex;
+  list-style-type: none;
+  align-items: center; 
+  flex-wrap: wrap;
+  margin-top:25%; 
+}
+.botao_rodape_visualizacao
+{
+  display:flex;
+  justify-content:space-between;
+  list-style-type: none;
+  align-items: center; 
+  width:100%;
 }
 #lista_artigo
 {
@@ -66,7 +89,7 @@
   justify-content:start;
   list-style-type: none;
   margin:auto;
-  width:90%;
+  width:100%;
  }
  #lista_opcao li{
   padding:25px;
@@ -109,7 +132,7 @@ tbody tr:hover
   cursor:pointer;
   transition: 0.5s;
 }
-    </style>
+</style>
 
 </head>
 <body>
@@ -198,19 +221,26 @@ tbody tr:hover
 
               </tbody>
          </table>
-         <input type="text" style="background-color:rgb(215, 215, 215);width:100%;margin-top:100%;">
-         <div id="visualizacao_rodape">
-            <div><a href="" class="opcao"><img src="img/trash_32x32.png" alt=""></a></div>
-            <div><a href="" class="opcao"><img src="img/print_32x32.png" alt=""></a></div>
-            <div><a href="" class="opcao"><img src="img/moeda_32x32.png" alt=""></a></div>
-            <div><a href="" class="opcao"><img src="img/check_32x32.png" alt=""></a></div>
-         </div>
+          
+          <div id="visualizacao_rodape">
+            <div style="width:100%;">
+               <input type="text" name="">
+            </div>
+            <div class="botao_rodape_visualizacao" >
+               <div><a href="" class="opcao"><img src="img/trash_32x32.png" alt=""></a></div>
+               <div><a href="" class="opcao"><img src="img/print_32x32.png" alt=""></a></div>
+               <div><a href="" class="opcao"><img src="img/moeda_32x32.png" alt=""></a></div>
+               <div><a href="" class="opcao"><img src="img/check_32x32.png" alt=""></a></div>
+             </div>
+           </div>
      </aside>
+
   </section>
 
   <!--******** Script JavaSript ********-->>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+
       // Função para lidar com o clique em uma linha
       function handleClick(event) {
    
@@ -247,8 +277,7 @@ tbody tr:hover
         tr_descricao.appendChild(td_preco);
        
         //colocar a linha na tabela
-        tabela.appendChild(tr_descricao);
-       
+        tabela.appendChild(tr_descricao);   
       }
       
       const rows = document.querySelectorAll('#tabela_produto tbody tr');
